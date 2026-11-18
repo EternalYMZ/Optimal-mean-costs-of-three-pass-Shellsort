@@ -1,0 +1,11 @@
+import Shellsort
+
+-- Print the quantified statements, followed by their transitive axioms.
+#check Shellsort.natural_gap_legal
+#check Shellsort.uniform_naturalThreePassInsertionCost_bounds
+#check Shellsort.uniform_naturalThreePassComparisonCost_bounds
+#check Shellsort.uniform_naturalThreePassComparisonCost_scaled
+
+#print axioms Shellsort.uniform_naturalThreePassInsertionCost_bounds
+#print axioms Shellsort.uniform_naturalThreePassComparisonCost_bounds
+#print axioms Shellsort.uniform_naturalThreePassComparisonCost_scaled
