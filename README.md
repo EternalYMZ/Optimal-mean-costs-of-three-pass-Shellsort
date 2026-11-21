@@ -37,3 +37,7 @@ The 2026-11-20 independent kernel check of `Shellsort.optimal_threePass_mean_bou
 The [original public version](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/318307acb46089a3fc74f4528d0a461eb69a1dd5) contains the natural-family result. For public review of P01, cite the commit and the declaration you checked. This repository uses the [Apache License 2.0](LICENSE).
 
 Additional executable check: after the build, run `lake env lean ExecutionBridge.lean`. See [ExecutionBridge.lean](ExecutionBridge.lean).
+
+## Proof guide
+
+[Read the proof idea in Chinese](brief.md). The guide explains the mathematical claim and the scope of the Lean results linked above.
