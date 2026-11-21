@@ -1,1 +1,4 @@
-import Shellsort.NaturalComparisonBounds
+import Shellsort.ThreePassOptimalMean
+
+#check Shellsort.optimal_threePass_mean_bounds
+#print axioms Shellsort.optimal_threePass_mean_bounds

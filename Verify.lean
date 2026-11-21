@@ -9,3 +9,8 @@ import Shellsort
 #print axioms Shellsort.uniform_naturalThreePassInsertionCost_bounds
 #print axioms Shellsort.uniform_naturalThreePassComparisonCost_bounds
 #print axioms Shellsort.uniform_naturalThreePassComparisonCost_scaled
+
+#check Shellsort.uniform_threePass_cost_lower
+#print axioms Shellsort.uniform_threePass_cost_lower
+#check Shellsort.optimal_threePass_mean_bounds
+#print axioms Shellsort.optimal_threePass_mean_bounds
