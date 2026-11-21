@@ -1,4 +1,4 @@
-# Project S · P01 · Three-pass Shellsort in Lean
+# Project S · P01 · Optimal mean costs of three-pass Shellsort
 
 **Miaozhen Yu (俞缪臻)** · [Project S](https://github.com/users/EternalYMZ/projects/1) · [Paper and repository directory](PROJECT-S.md)
 
@@ -34,4 +34,6 @@ lake env lean Verify.lean
 
 The 2026-11-20 independent kernel check of `Shellsort.optimal_threePass_mean_bounds` accepted the exported proof and its 46,598 declarations, including dependencies. The SHA-256 of that Lean export is `e0abc4b2e83aeef62913ff15b4943665a365b4155e4702a10fe1f56c31a13b2a`.
 
-The [original public version](https://github.com/EternalYMZ/Three-pass-Shellsort-in-Lean/tree/318307acb46089a3fc74f4528d0a461eb69a1dd5) contains the natural-family result. For public review of P01, cite the commit and the declaration you checked. This repository uses the [Apache License 2.0](LICENSE).
+The [original public version](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/318307acb46089a3fc74f4528d0a461eb69a1dd5) contains the natural-family result. For public review of P01, cite the commit and the declaration you checked. This repository uses the [Apache License 2.0](LICENSE).
+
+Additional executable check: after the build, run `lake env lean ExecutionBridge.lean`. See [ExecutionBridge.lean](ExecutionBridge.lean).
