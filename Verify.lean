@@ -53,3 +53,14 @@ import Shellsort
 #print axioms Shellsort.F09Second.uniform_second_limit
 #check Shellsort.F09Second.critical_secondPass_limit
 #print axioms Shellsort.F09Second.critical_secondPass_limit
+
+#check Shellsort.F09.order_optimal_iff_finite
+#print axioms Shellsort.F09.order_optimal_iff_finite
+#check Shellsort.F09.comparison_order_optimal_iff_finite
+#print axioms Shellsort.F09.comparison_order_optimal_iff_finite
+#check Shellsort.F09.actual_threePass_critical_law
+#print axioms Shellsort.F09.actual_threePass_critical_law
+#check Shellsort.F09.actual_critical_uniform
+#print axioms Shellsort.F09.actual_critical_uniform
+#check Shellsort.F09.actual_optimal_threePass_limits
+#print axioms Shellsort.F09.actual_optimal_threePass_limits

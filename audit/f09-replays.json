@@ -1,0 +1,48 @@
+{
+  "lean": "4.36.0",
+  "mathlib": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "exporter": "lean4export 3.1.0",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exports": [
+    {
+      "module": "Shellsort.F09SecondCritical",
+      "declarations": [
+        "Shellsort.F09Second.uniform_executed_shifts_eq_tag_integrals",
+        "Shellsort.F09Second.integratedDifference_exact",
+        "Shellsort.F09Second.integratedDifference_limit",
+        "Shellsort.F09Second.uniform_second_bounds",
+        "Shellsort.F09Second.uniform_second_limit",
+        "Shellsort.F09Second.critical_secondPass_limit"
+      ],
+      "checked_declarations": 46051,
+      "export_sha256": "626d5cb242cebc20765f87912901a7defb85f9cf34168f9db7b23badcfa1056e"
+    },
+    {
+      "module": "Shellsort.F09PhaseIntegrationFinal",
+      "declarations": [
+        "Shellsort.F09.actual_tag_same_class_limit",
+        "Shellsort.F09.actual_tag_cross_class_limit",
+        "Shellsort.F09.actual_threePass_critical_law",
+        "Shellsort.F09.actual_optimal_threePass_limits"
+      ],
+      "checked_declarations": 59329,
+      "export_sha256": "ba192eb570f67c07f4eea76ecf85fcb6b4ffa6400fbb879312b6802331056bb7"
+    },
+    {
+      "module": "Shellsort.F09OrderFinite",
+      "declarations": [
+        "Shellsort.F09.tagged_displacement_by_class",
+        "Shellsort.F09.uniform_twoPass_footrule_all_divisors",
+        "Shellsort.F09.threePass_cost_controlled_scales",
+        "Shellsort.F09.order_optimal_iff_finite",
+        "Shellsort.F09.comparison_order_optimal_iff_finite"
+      ],
+      "checked_declarations": 46739,
+      "export_sha256": "100f2f4097c9f1928a57587c776fbef237430c64f244c8299aad4ec1ee87baf7"
+    }
+  ]
+}
