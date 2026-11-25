@@ -2,6 +2,7 @@ import Shellsort.CostAssembly
 import Shellsort.FixedPassCostAudit
 import Shellsort.OrdinaryWordComparisons
 import Shellsort.ThreePassOptimalMean
+import Shellsort.ThreePassRefinedUpper
 import Shellsort.TwoGapResidualScales
 
 #check Shellsort.optimal_threePass_mean_bounds

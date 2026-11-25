@@ -13,12 +13,14 @@ Fix $n$ distinct keys, take their initial order uniformly at random, and choose 
 For every integer $n\ge16$, the two minima, taken separately over all admissible three-pass gap sequences, satisfy
 
 $$
-\frac{n\sqrt n}{65536}\le \min_{n>h>g\ge2}\mathbb E[M]\le 4n\sqrt n,
+\frac{n\sqrt n}{65536}\le \min_{n>h>g\ge2}\mathbb E[M]\le 2n\sqrt n,
 \qquad
-\frac{n\sqrt n}{65536}\le \min_{n>h>g\ge2}\mathbb E[C]\le 5n\sqrt n.
+\frac{n\sqrt n}{65536}\le \min_{n>h>g\ge2}\mathbb E[C]\le \tfrac52 n\sqrt n.
 $$
 
 Every admissible gap sequence satisfies both lower bounds, including sequences whose first two gaps are not coprime. With $q=\lfloor n^{1/4}\rfloor$, the single sequence $(q^2+1,q,1)$ gives both upper bounds.
+
+The revised upper bounds charge the second pass using the footrule before and after it. The formalization also proves that the two optimal means differ by at most $3n$. If a legal table has mean shifts at most $Kn\sqrt n$, every common divisor $d\ge2$ of its first two gaps satisfies $\sqrt d\le2048K$. The November 25 manuscript's stronger lower constant $1/64$, full characterization of order-optimal gap families, and bounds on the limiting inferior and superior remain analytical results. [Lean proofs](Shellsort/ThreePassRefinedUpper.lean)
 
 ## Manuscripts
 
@@ -43,6 +45,8 @@ The principal declarations are in the `Shellsort` namespace.
 | Result | Declaration |
 |---|---|
 | Bounds on both optimal mean costs | [`optimal_threePass_mean_bounds`](Shellsort/ThreePassOptimalMean.lean) |
+| Revised upper bounds for the natural table and for both minima | [`uniform_naturalThreePass_refined_upper` and `optimal_threePass_mean_refined_upper`](Shellsort/ThreePassRefinedUpper.lean) |
+| Difference of optimal means and the common-divisor restriction | [`optimal_threePass_mean_difference` and `threePass_common_divisor_budget`](Shellsort/ThreePassRefinedUpper.lean) |
 | Lower bounds for every admissible gap pair | [`uniform_threePass_cost_lower`](Shellsort/UniformThreePassLower.lean) |
 | Two-pass displacement upper bound for coprime gaps | [`uniform_twoPass_footrule_bound`](Shellsort/TaggedUpper.lean) |
 | Shift-cost bounds for the explicit family | [`uniform_naturalThreePassInsertionCost_bounds`](Shellsort/NaturalThreePass.lean) |
@@ -67,6 +71,8 @@ lake env lean ExecutionBridge.lean
 ```
 
 See [ExecutionBridge.lean](ExecutionBridge.lean) for this check.
+
+On 2026-11-25, Nanoda replayed the four declared results from `ThreePassRefinedUpper` listed in the table, together with their dependencies. It checked 46,361 declarations with the axiom allowlist `propext`, `Classical.choice`, and `Quot.sound`. The joint Lean export had SHA-256 `f5f4e9ae03d0b32394147d521bc59b090101517622e151f15cc9cf9c610d834c`.
 
 ## Project Information
 

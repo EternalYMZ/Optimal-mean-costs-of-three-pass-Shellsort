@@ -14,3 +14,12 @@ import Shellsort
 #print axioms Shellsort.uniform_threePass_cost_lower
 #check Shellsort.optimal_threePass_mean_bounds
 #print axioms Shellsort.optimal_threePass_mean_bounds
+
+#check Shellsort.uniform_naturalThreePass_refined_upper
+#print axioms Shellsort.uniform_naturalThreePass_refined_upper
+#check Shellsort.optimal_threePass_mean_refined_upper
+#print axioms Shellsort.optimal_threePass_mean_refined_upper
+#check Shellsort.optimal_threePass_mean_difference
+#print axioms Shellsort.optimal_threePass_mean_difference
+#check Shellsort.threePass_common_divisor_budget
+#print axioms Shellsort.threePass_common_divisor_budget
