@@ -23,3 +23,24 @@ import Shellsort
 #print axioms Shellsort.optimal_threePass_mean_difference
 #check Shellsort.threePass_common_divisor_budget
 #print axioms Shellsort.threePass_common_divisor_budget
+
+#check Shellsort.threePass_gap_lower_scales
+#print axioms Shellsort.threePass_gap_lower_scales
+#check Shellsort.threePass_coprime_product_budget
+#print axioms Shellsort.threePass_coprime_product_budget
+#check Shellsort.threePass_coprime_gap_scales
+#print axioms Shellsort.threePass_coprime_gap_scales
+#check Shellsort.threePass_coprime_cost_of_gap_scales
+#print axioms Shellsort.threePass_coprime_cost_of_gap_scales
+#check Shellsort.threePass_regret_difference
+#print axioms Shellsort.threePass_regret_difference
+#check Shellsort.threePass_nearOptimal_cost_iff
+#print axioms Shellsort.threePass_nearOptimal_cost_iff
+#check Shellsort.threePass_critical_firstPass_limit
+#print axioms Shellsort.threePass_critical_firstPass_limit
+#check Shellsort.critical_gap_realization
+#print axioms Shellsort.critical_gap_realization
+#check Shellsort.critical_variational_slice
+#print axioms Shellsort.critical_variational_slice
+#check Shellsort.critical_variational_lowerBounds
+#print axioms Shellsort.critical_variational_lowerBounds

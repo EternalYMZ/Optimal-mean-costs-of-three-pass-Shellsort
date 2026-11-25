@@ -3,6 +3,8 @@ import Shellsort.FixedPassCostAudit
 import Shellsort.OrdinaryWordComparisons
 import Shellsort.ThreePassOptimalMean
 import Shellsort.ThreePassRefinedUpper
+import Shellsort.ThreePassGapScales
+import Shellsort.CriticalGapApproximation
 import Shellsort.TwoGapResidualScales
 
 #check Shellsort.optimal_threePass_mean_bounds

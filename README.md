@@ -20,7 +20,11 @@ $$
 
 Every admissible gap sequence satisfies both lower bounds, including sequences whose first two gaps are not coprime. With $q=\lfloor n^{1/4}\rfloor$, the single sequence $(q^2+1,q,1)$ gives both upper bounds.
 
-The revised upper bounds charge the second pass using the footrule before and after it. The formalization also proves that the two optimal means differ by at most $3n$. If a legal table has mean shifts at most $Kn\sqrt n$, every common divisor $d\ge2$ of its first two gaps satisfies $\sqrt d\le2048K$. The November 25 manuscript's stronger lower constant $1/64$, full characterization of order-optimal gap families, and bounds on the limiting inferior and superior remain analytical results. [Lean proofs](Shellsort/ThreePassRefinedUpper.lean)
+The revised upper bounds charge the second pass using the footrule before and after it. The formalization also proves that the two optimal means differ by at most $3n$. If a legal table has mean shifts at most $Kn\sqrt n$, every common divisor $d\ge2$ of its first two gaps satisfies $\sqrt d\le2048K$. The sharper all-table lower coefficient $1/64$ is proved in the manuscript. [Finite formal bounds](Shellsort/ThreePassRefinedUpper.lean)
+
+For coprime gaps, the formal bounds now characterize all order-optimal families. A mean-shift budget of order $n^{3/2}$ forces the two critical scales, and those scales suffice for shifts and comparisons. For general gaps the verified necessary bounds constrain both gaps from below and bound their common divisor. The arbitrary-divisor equivalence uses an additional analytical residue-class argument. [Scale bounds and near-optimal costs](Shellsort/ThreePassGapScales.lean)
+
+At critical scales Lean also proves the actual first-pass coefficient, constructs integer gaps realizing any fixed positive pair of scales and any prescribed positive gcd, and eliminates one variable from the variational problem. The sharp second- and final-pass limits and the identification of the global coefficient use additional analytical arguments. [Integer realization and variational minimization](Shellsort/CriticalGapApproximation.lean)
 
 ## Manuscripts
 
