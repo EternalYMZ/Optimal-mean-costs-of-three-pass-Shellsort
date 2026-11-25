@@ -37,7 +37,7 @@ python audit/f09_quadrature.py --output .lake/f09-integers
 python audit/f09_quadrature.py --sine-table Shellsort/F09CertificateSinTableData.lean --compare .lake/f09-integers --output .lake/f09-lookup
 ~~~
 
-The complete kernel export covers ten roots, including both cost limits, both family criteria and the numerical separation. To check it from an empty environment, run `node audit/replay-f09.mjs Shellsort.F09Verified`. The script checks the SHA-256, theorem names and permitted axioms before replay. The full export is approximately 519 MB. [Proof roots and exact fingerprint](audit/f09-replays.json)
+The complete kernel export covers ten roots, including both cost limits, both family criteria and the numerical separation. Lean 4.36.0's default kernel successfully replayed this export from an empty environment (76,672 declarations). [Full kernel result](audit/f09-full-kernel.json) To check it from an empty environment, run `node audit/replay-f09.mjs Shellsort.F09Verified`. The script checks the SHA-256, theorem names and permitted axioms before replay. The full export is approximately 519 MB. [Proof roots and exact fingerprint](audit/f09-replays.json)
 
 For each counter separately, every noncoprime legal table eventually exceeds its finite-size optimum by strictly more than $0.00718514594\,n\sqrt n$. This follows uniformly from the lower limit $0.61546$ for noncoprime tables and the strict upper bound for $\kappa$. Consequently **every** exact minimizer, including tied minimizers, is coprime at all sufficiently large sizes. The size threshold is existential. [Three unconditional corollaries](Shellsort/F09NoncoprimeCost.lean)
 

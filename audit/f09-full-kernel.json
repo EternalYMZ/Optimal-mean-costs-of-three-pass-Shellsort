@@ -1,0 +1,30 @@
+{
+  "module": "Shellsort.F09Verified",
+  "proof_revision": "59213850d62ca725acdbf2a66a875d03c715ac56",
+  "checker": "Lean 4.36.0 default kernel",
+  "invocation": "leanchecker --from-export final-f09.jsonl",
+  "scope": "ten listed roots and their full transitive dependency closure, replayed from an empty environment",
+  "export_sha256": "83464faddf868fb7e60446acee59d84b72b8cc32f2b03495572b8cf1e1abeb3e",
+  "export_bytes": 518606679,
+  "checked_declarations": 76672,
+  "theorem_declarations": 58932,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "roots": [
+    "Shellsort.F09.verified_three_pass_optimum",
+    "Shellsort.F09.verified_optimal_gap_families",
+    "Shellsort.F09.verified_optimal_regret",
+    "Shellsort.F09.verified_variational_shapes",
+    "Shellsort.F09.verified_kappa_precise",
+    "Shellsort.F09.verified_noncoprime_separation",
+    "Shellsort.F09.verified_global_scale_minimum",
+    "Shellsort.F09.actual_critical_uniform",
+    "Shellsort.F09.order_optimal_iff_finite",
+    "Shellsort.F09.comparison_order_optimal_iff_finite"
+  ],
+  "exit_code": 0,
+  "output": "Lean default kernel accepts the solution"
+}

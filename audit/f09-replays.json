@@ -95,7 +95,9 @@
         "Shellsort.F09.comparison_order_optimal_iff_finite"
       ],
       "checker": "leanchecker",
-      "export_sha256": "83464faddf868fb7e60446acee59d84b72b8cc32f2b03495572b8cf1e1abeb3e"
+      "export_sha256": "83464faddf868fb7e60446acee59d84b72b8cc32f2b03495572b8cf1e1abeb3e",
+      "checked_declarations": 76672,
+      "record": "audit/f09-full-kernel.json"
     }
   ]
 }
