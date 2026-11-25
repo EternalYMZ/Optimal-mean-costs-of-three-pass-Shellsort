@@ -5,7 +5,7 @@ import Shellsort.ThreePassOptimalMean
 import Shellsort.ThreePassRefinedUpper
 import Shellsort.ThreePassGapScales
 import Shellsort.F09ResidueRestriction
-import Shellsort.F09Verified
+import Shellsort.F09NoncoprimeCost
 import Shellsort.CriticalGapApproximation
 import Shellsort.TwoGapResidualScales
 

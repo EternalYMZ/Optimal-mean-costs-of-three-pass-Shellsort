@@ -39,6 +39,10 @@ python audit/f09_quadrature.py --sine-table Shellsort/F09CertificateSinTableData
 
 The complete kernel export covers ten roots, including both cost limits, both family criteria and the numerical separation. To check it from an empty environment, run `node audit/replay-f09.mjs Shellsort.F09Verified`. The script checks the SHA-256, theorem names and permitted axioms before replay. The full export is approximately 519 MB. [Proof roots and exact fingerprint](audit/f09-replays.json)
 
+For each counter separately, every noncoprime legal table eventually exceeds its finite-size optimum by strictly more than $0.00718514594\,n\sqrt n$. This follows uniformly from the lower limit $0.61546$ for noncoprime tables and the strict upper bound for $\kappa$. Consequently **every** exact minimizer, including tied minimizers, is coprime at all sufficiently large sizes. The size threshold is existential. [Three unconditional corollaries](Shellsort/F09NoncoprimeCost.lean)
+
+To inspect the input law, executed counters, minimization domains, complete theorem types and transitive axioms together, run `lake env lean audit/Review.lean` after the build. As an independent finite check of the second-pass estimate, `python audit/check_second_pass.py` compares two-chain interleaving probabilities with all 158,323 input/table executions through size seven, then checks 11,480 inequalities through size forty. [Model and root inspection](audit/Review.lean) · [Exact finite check](audit/check_second_pass.py)
+
 ## Manuscripts
 
 The complete analytic proof is available in English and Chinese. Both versions use the same organization: a README followed by Chapters 01–06. The proof connects costs to displacement through the local net displacement $F_k$, then combines a two-pass displacement upper bound with two fluctuation lower bounds.

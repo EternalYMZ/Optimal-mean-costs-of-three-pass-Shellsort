@@ -80,3 +80,10 @@ import Shellsort
 #print axioms Shellsort.F09.verified_global_scale_minimum
 #check Shellsort.F09.verified_optimal_regret
 #print axioms Shellsort.F09.verified_optimal_regret
+
+#check Shellsort.F09.verified_noncoprime_cost_floor
+#print axioms Shellsort.F09.verified_noncoprime_cost_floor
+#check Shellsort.F09.verified_noncoprime_cost_penalty
+#print axioms Shellsort.F09.verified_noncoprime_cost_penalty
+#check Shellsort.F09.verified_exact_minimizers_coprime
+#print axioms Shellsort.F09.verified_exact_minimizers_coprime

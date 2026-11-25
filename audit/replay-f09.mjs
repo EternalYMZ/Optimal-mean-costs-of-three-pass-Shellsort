@@ -48,7 +48,7 @@ async function checkExportInterface(proof, roots) {
 
 for (const group of groups) {
   run(['build', group.module]);
-  const dir = mkdtempSync(join(tmpdir(), 'project-s-f09-'));
+  const dir = mkdtempSync(join(tmpdir(), 'shellsort-f09-'));
   try {
     const proof = join(dir, 'proof.ndjson');
     const statements = join(dir, 'theorems.txt');
