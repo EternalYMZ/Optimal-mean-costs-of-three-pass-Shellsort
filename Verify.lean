@@ -44,3 +44,12 @@ import Shellsort
 #print axioms Shellsort.critical_variational_slice
 #check Shellsort.critical_variational_lowerBounds
 #print axioms Shellsort.critical_variational_lowerBounds
+
+#check Shellsort.F09.uniform_threePass_class_le
+#print axioms Shellsort.F09.uniform_threePass_class_le
+#check Shellsort.F09.threePass_budget_rectangle
+#print axioms Shellsort.F09.threePass_budget_rectangle
+#check Shellsort.F09Second.uniform_second_limit
+#print axioms Shellsort.F09Second.uniform_second_limit
+#check Shellsort.F09Second.critical_secondPass_limit
+#print axioms Shellsort.F09Second.critical_secondPass_limit
