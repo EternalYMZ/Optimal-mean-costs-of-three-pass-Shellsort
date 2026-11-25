@@ -43,6 +43,59 @@
       ],
       "checked_declarations": 46739,
       "export_sha256": "100f2f4097c9f1928a57587c776fbef237430c64f244c8299aad4ec1ee87baf7"
+    },
+    {
+      "module": "Shellsort.F09OptimalFamilies",
+      "declarations": [
+        "Shellsort.F09.asymptotically_optimal_iff",
+        "Shellsort.F09.optimalShapes_compact",
+        "Shellsort.F09.optimalShapes_nonempty"
+      ],
+      "checked_declarations": 46905,
+      "export_sha256": "c83fd24c6af39314f553eecfc8295834d1353c229f60bf16c88fa244bccf2e4f"
+    },
+    {
+      "module": "Shellsort.F09CertificateCover",
+      "declarations": [
+        "Shellsort.F09.kappa_lower_sharp",
+        "Shellsort.F09.K_noncoprime_sharp"
+      ],
+      "checked_declarations": 47760,
+      "export_sha256": "6454097af176a849cbb210d1b0202e8a776ca6dabfcecef1ce3c6b5c32841885"
+    },
+    {
+      "module": "Shellsort.F09Witness093",
+      "declarations": [
+        "_private.Shellsort.F09Witness093.0.Shellsort.F09.Witness.R093.chunk00"
+      ],
+      "checked_declarations": 3530,
+      "export_sha256": "5d85541f710ef31af3a88436ad1218dd9179fb978ec25758d1f2a1e72274a2b7"
+    },
+    {
+      "module": "Shellsort.F09WitnessUpper",
+      "declarations": [
+        "Shellsort.F09.witness_upper_strict"
+      ],
+      "checker": "leanchecker",
+      "recorded_executable": "leanchecker-paranoid",
+      "export_sha256": "e10328302a147b03f648bd0c4b08e9a4be776355d1e19b71db1e1e0f519a3721"
+    },
+    {
+      "module": "Shellsort.F09Verified",
+      "declarations": [
+        "Shellsort.F09.verified_three_pass_optimum",
+        "Shellsort.F09.verified_optimal_gap_families",
+        "Shellsort.F09.verified_optimal_regret",
+        "Shellsort.F09.verified_variational_shapes",
+        "Shellsort.F09.verified_kappa_precise",
+        "Shellsort.F09.verified_noncoprime_separation",
+        "Shellsort.F09.verified_global_scale_minimum",
+        "Shellsort.F09.actual_critical_uniform",
+        "Shellsort.F09.order_optimal_iff_finite",
+        "Shellsort.F09.comparison_order_optimal_iff_finite"
+      ],
+      "checker": "leanchecker",
+      "export_sha256": "83464faddf868fb7e60446acee59d84b72b8cc32f2b03495572b8cf1e1abeb3e"
     }
   ]
 }

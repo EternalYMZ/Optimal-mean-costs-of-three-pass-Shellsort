@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { createReadStream, closeSync, mkdtempSync, openSync, readFileSync, rmSync, rmdirSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,6 +23,29 @@ function run(args, stdout = 'inherit') {
   if (result.status !== 0) throw new Error(`lake ${args[0]} exited with status ${result.status}`);
 }
 
+// The final export includes the large integer proofs from all thirteen quadratures.
+async function checkExportInterface(proof, roots) {
+  const names = [''];
+  const missing = new Set(roots);
+  const lines = createInterface({ input: createReadStream(proof), crlfDelay: Infinity });
+  for await (const line of lines) {
+    if (line.startsWith('{"in":')) {
+      const record = JSON.parse(line);
+      const part = record.str ?? record.num;
+      if (!part) throw new Error('Unsupported exported name');
+      const prefix = names[part.pre];
+      if (prefix === undefined) throw new Error('Missing exported name prefix');
+      names[record.in] = (prefix ? prefix + '.' : '') + (part.str ?? part.i);
+    } else if (line.startsWith('{"axiom":')) {
+      const name = names[JSON.parse(line).axiom.name];
+      if (!manifest.allowed_axioms.includes(name)) throw new Error('Unapproved axiom ' + name);
+    } else if (line.startsWith('{"thm":')) {
+      missing.delete(names[JSON.parse(line).thm.name]);
+    }
+  }
+  if (missing.size) throw new Error('Missing exported theorems: ' + [...missing].join(', '));
+}
+
 for (const group of groups) {
   run(['build', group.module]);
   const dir = mkdtempSync(join(tmpdir(), 'project-s-f09-'));
@@ -38,6 +62,13 @@ for (const group of groups) {
     const sha = createHash('sha256');
     for await (const chunk of createReadStream(proof)) sha.update(chunk);
     const digest = sha.digest('hex');
+    if (digest !== group.export_sha256) throw new Error('Export differs from the recorded SHA-256.');
+    if (group.checker === 'leanchecker') {
+      await checkExportInterface(proof, group.declarations);
+      run(['env', process.env.LEANCHECKER || 'leanchecker' + suffix, '--from-export', proof]);
+      console.log(group.module, digest);
+      continue;
+    }
     writeFileSync(statements, '');
     writeFileSync(config, JSON.stringify({
       export_file_path: proof, permitted_axioms: manifest.allowed_axioms,
@@ -51,7 +82,6 @@ for (const group of groups) {
       if (!types.includes('theorem ' + name)) throw new Error('Missing checked theorem ' + name);
     }
     console.log(group.module, digest);
-    if (digest !== group.export_sha256) throw new Error('Export differs from the recorded SHA-256.');
   } finally {
     for (const file of ['proof.ndjson', 'theorems.txt', 'nanoda.json']) {
       rmSync(join(dir, file), { force: true });

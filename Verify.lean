@@ -64,3 +64,19 @@ import Shellsort
 #print axioms Shellsort.F09.actual_critical_uniform
 #check Shellsort.F09.actual_optimal_threePass_limits
 #print axioms Shellsort.F09.actual_optimal_threePass_limits
+#check Shellsort.F09.verified_three_pass_optimum
+#print axioms Shellsort.F09.verified_three_pass_optimum
+#check Shellsort.F09.verified_optimal_gap_families
+#print axioms Shellsort.F09.verified_optimal_gap_families
+#check Shellsort.F09.verified_variational_shapes
+#print axioms Shellsort.F09.verified_variational_shapes
+#check Shellsort.F09.verified_kappa_enclosure
+#print axioms Shellsort.F09.verified_kappa_enclosure
+#check Shellsort.F09.verified_noncoprime_separation
+#print axioms Shellsort.F09.verified_noncoprime_separation
+#check Shellsort.F09.verified_kappa_precise
+#print axioms Shellsort.F09.verified_kappa_precise
+#check Shellsort.F09.verified_global_scale_minimum
+#print axioms Shellsort.F09.verified_global_scale_minimum
+#check Shellsort.F09.verified_optimal_regret
+#print axioms Shellsort.F09.verified_optimal_regret

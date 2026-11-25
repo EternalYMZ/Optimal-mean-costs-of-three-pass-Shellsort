@@ -4,6 +4,10 @@
 
 **Keywords.** Shellsort; average-case complexity; three-pass sorting; displacement estimates.
 
+### Sharp leading coefficient
+
+For either counter the optimized mean is $(\kappa+o(1))n^{3/2}$ with $0.60822153\le\kappa<0.60827485406$. Order optimality is equivalent to $h=\Theta(\sqrt n)$, $g=\Theta(n^{1/4})$ and bounded $\gcd(h,g)$. At a fixed divisor $d$ and positive limiting gap coordinates $(a,b)$, the executed mean divided by $n^{3/2}$ tends to the explicit $K_d(a,b)$. Attaining $\kappa$ requires and suffices that the gaps be eventually coprime and the normalized pair approach the full minimizing set. [Integral kernels](../Shellsort/F09CertificateFunctions.lean) · [Proof and reproduction guide](../README.md) · [Final declarations](../Shellsort/F09Verified.lean)
+
 ## 1. Model and Cost Measures
 
 The input consists of $n$ distinct keys, which we equivalently represent as a uniform random permutation of $\{0,1,\dots,n-1\}$. A gap sequence $(h,g,1)$ is chosen in advance, where $n>h>g\ge2$ are integers. A pass with gap $k$ applies ordinary insertion sort with linear scanning to each chain of positions $r,r+k,r+2k,\dots$.

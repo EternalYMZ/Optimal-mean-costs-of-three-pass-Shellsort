@@ -2,9 +2,9 @@
 
 **Miaozhen Yu (俞缪臻)** · [Project S](https://github.com/users/EternalYMZ/projects/1) · [Paper and repository directory](PROJECT-S.md)
 
-**[English manuscript](Shellsort-P01_en/README.md)** · **[中文文稿](Shellsort-P01_cn/README.md)** · **[Main Lean theorem](Shellsort/ThreePassOptimalMean.lean)**
+**[English manuscript](Shellsort-P01_en/README.md)** · **[中文文稿](Shellsort-P01_cn/README.md)** · **[Sharp three-pass theorem](Shellsort/F09Verified.lean)**
 
-This repository contains the analytic proofs and Lean formalization of the optimal mean costs of three-pass Shellsort. For uniform random permutations, both the optimal mean number of successful right shifts and the optimal mean number of key comparisons are $\Theta(n^{3/2})$ when the gap sequence is fixed before the input is read.
+On uniform random permutations, ordinary three-pass Shellsort with the best predetermined gaps uses $(\kappa+o(1))n^{3/2}$ successful shifts or key comparisons in expectation, with each mean minimized separately. Lean proves $0.60822153\le\kappa<0.60827485406$ and characterizes every gap family attaining this coefficient.
 
 ## Main Result
 
@@ -26,7 +26,18 @@ A legal deterministic family has mean shifts of order at most $n^{3/2}$ exactly 
 
 Fix $d=\gcd(h,g)$. For positive limiting coordinates $a=h/\sqrt n$, $b=g/n^{1/4}$, both executed means divided by $n\sqrt n$ tend to $K_d(a,b)$. The critical approximation holds uniformly on each compact set of positive coordinates. It includes the actual second-pass contribution $\sqrt{\pi}\sqrt a/(8b)$, the within-class last-pass term and the contributions of the other $d-1$ classes. Minimizing over all legal tables gives the same attained variational infimum for the two separately optimized counters. [Uniform law](Shellsort/F09CriticalResults.lean) · [Variational infimum and original-slot proof](Shellsort/F09PhaseIntegrationFinal.lean) · [Integral definitions](Shellsort/F09CertificateFunctions.lean)
 
-Nanoda replayed six second-pass declarations and their dependencies (46,051 declarations), and a second export connecting the actual within-class and cross-class incidences to the two global minima (59,329 declarations). The manifest provides the roots, allowlist and export fingerprints. After installing the compatible `leanexport` and `nanoda_bin` executables in the Lean toolchain, run `node audit/replay-f09.mjs` from this repository. [Replay manifest](audit/f09-replays.json) · [Reproduction script](audit/replay-f09.mjs)
+For $d\ge2$, the critical cost satisfies $K_d(a,b)\ge0.61546$ at every positive scale. Hence a family attains the leading coefficient precisely when its gaps are eventually coprime and their normalized coordinates approach the compact set of minimizing pairs. This set comprises $(a,z/\sqrt a)$ with $a=\tfrac12\sqrt{z/c}$ and $z$ minimizing $\sqrt{c/z}+zJ(1/z^2)$, where $c=\sqrt{\pi}/8$. All thirteen signed quadratures, including the upper witness at $z=291/200$, are proved in Lean. [Enclosure and divisor separation](Shellsort/F09CertificateKnots.lean) · [Optimal families and shape formula](Shellsort/F09Verified.lean)
+
+Nanoda replayed six second-pass declarations and their dependencies (46,051 declarations), and a second export connecting the actual within-class and cross-class incidences to the two global minima (59,329 declarations). The compact-shape argument and the numerical separation conditional on the thirteen integral bounds have independent Nanoda replays of 46,905 and 47,760 declarations, respectively. The full upper quadrature witness has an additional replay from an empty environment using the Lean kernel. The manifest names the checker and proof roots for each export. The finite all-gap classification replay checked 46,739 declarations. After installing the compatible `leanexport` and `nanoda_bin` executables in the Lean toolchain, run `node audit/replay-f09.mjs` from this repository. [Replay manifest](audit/f09-replays.json) · [Reproduction script](audit/replay-f09.mjs)
+
+For an independent integer recomputation of the row scores, run the following commands from the repository root. They exercise both the half-angle recurrence and the certified sine lookup table.
+
+~~~sh
+python audit/f09_quadrature.py --output .lake/f09-integers
+python audit/f09_quadrature.py --sine-table Shellsort/F09CertificateSinTableData.lean --compare .lake/f09-integers --output .lake/f09-lookup
+~~~
+
+The complete kernel export covers ten roots, including both cost limits, both family criteria and the numerical separation. To check it from an empty environment, run `node audit/replay-f09.mjs Shellsort.F09Verified`. The script checks the SHA-256, theorem names and permitted axioms before replay. The full export is approximately 519 MB. [Proof roots and exact fingerprint](audit/f09-replays.json)
 
 ## Manuscripts
 
@@ -46,10 +57,13 @@ Appendix A explains the correspondence between the analytic proof and the Lean f
 
 ## Lean Formalization
 
-The principal declarations are in the `Shellsort` namespace.
+The finite theorems are in `Shellsort`, and the sharp coefficient and family theorems are in `Shellsort.F09`.
 
 | Result | Declaration |
 |---|---|
+| Sharp limits for the actual shifts and comparisons | [`verified_three_pass_optimum`](Shellsort/F09Verified.lean) |
+| Optimal families and compact set of minimizing shapes | [`verified_optimal_gap_families` and `verified_variational_shapes`](Shellsort/F09Verified.lean) |
+| Strict numerical enclosure and uniform divisor separation | [`verified_kappa_precise` and `verified_noncoprime_separation`](Shellsort/F09CertificateKnots.lean) |
 | Bounds on both optimal mean costs | [`optimal_threePass_mean_bounds`](Shellsort/ThreePassOptimalMean.lean) |
 | Revised upper bounds for the natural table and for both minima | [`uniform_naturalThreePass_refined_upper` and `optimal_threePass_mean_refined_upper`](Shellsort/ThreePassRefinedUpper.lean) |
 | Difference of optimal means and the common-divisor restriction | [`optimal_threePass_mean_difference` and `threePass_common_divisor_budget`](Shellsort/ThreePassRefinedUpper.lean) |
@@ -64,6 +78,7 @@ Install Git and [elan](https://github.com/leanprover/elan), clone the repository
 
 ```sh
 lake exe cache get
+python audit/replay_knots.py --jobs 2
 lake build
 lake env lean Verify.lean
 ```
