@@ -5,8 +5,8 @@ Miaozhen Yu (俞缪臻). The [Project S research index](https://github.com/Etern
 | Paper | Repository | Formal coverage |
 |---|---|---|
 | P00 | [Chain-displacement-in-Shellsort](https://github.com/EternalYMZ/Chain-displacement-in-Shellsort) | Single-pass chain displacement and execution identities. |
-| P01 | [Optimal-mean-costs-of-three-pass-Shellsort](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort) | Uniform three-pass lower bounds, the natural upper-bound family and the separate optimal means. |
-| P02 | [Three-pass-Shellsort-inversion-error](https://github.com/EternalYMZ/Three-pass-Shellsort-inversion-error) | Deterministic final-pass arc identities for coprime gaps. Formal coverage is partial. |
+| P01 | [Optimal-mean-costs-of-three-pass-Shellsort](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort) | Uniform three-pass lower bounds, separate optimal means and the real final-pass error. The finite coupling and conditional transfer are machine-checked. |
+| P02 | [Three-pass-Shellsort-inversion-error](https://github.com/EternalYMZ/Three-pass-Shellsort-inversion-error) | Deterministic final-pass arc identities for coprime gaps, exact threshold analysis and rank-bucket estimates. The error proof now belongs to the P01 main results. |
 | P03 | [Four-pass-Shellsort-bounds](https://github.com/EternalYMZ/Four-pass-Shellsort-bounds) | Exact fiber packing for long and short chains, cyclic support and conditional variance. The unrestricted four-pass lower bound remains a candidate. |
 | P04 | [Optimal-mean-comparisons-in-Shellsort](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort) | Optimal uniform mean key comparisons for predetermined tables, with rank and physical-key statements. The seven-pass billion-key exclusion has an analytical proof and rational certificate. |
 | P05 | [Four-pass-Shellsort-reachability](https://github.com/EternalYMZ/Four-pass-Shellsort-reachability) | Slot potentials, checkpoint capacity and a finite example. The four-pass separation awaits formalization. |

@@ -98,6 +98,21 @@
       "export_sha256": "83464faddf868fb7e60446acee59d84b72b8cc32f2b03495572b8cf1e1abeb3e",
       "checked_declarations": 76672,
       "record": "audit/f09-full-kernel.json"
+    },
+    {
+      "module": "ReviewJK.Review",
+      "declarations": [
+        "Shellsort.two_mul_lastCost_eq_sum_taggedArc",
+        "Shellsort.JK.referenceArc_eq_binomial_sum",
+        "Shellsort.JK.bernoulli_arc_coupling",
+        "Shellsort.JK.two_mul_lastCost_error",
+        "Shellsort.JK.lastCost_error_of_arc_bound",
+        "Shellsort.JK.lastCost_uniform_error_of_integrated_arcs"
+      ],
+      "checked_declarations": 18790,
+      "export_sha256": "0dc3b9e2fe047ad804f21ca7ff9fe9c635875f7267dffaf72aff8460661ae80a",
+      "export_bytes": 82174921,
+      "checker": "nanoda"
     }
   ]
 }

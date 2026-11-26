@@ -8,3 +8,8 @@ require mathlib from git "https://github.com/leanprover-community/mathlib4.git" 
 @[default_target]
 lean_lib Shellsort where
   roots := #[`Shellsort, `Shellsort.Stage8]
+
+@[default_target]
+lean_lib ReviewJK where
+  roots := #[`ReviewJK.Review]
+  globs := #[.submodules `ReviewJK]

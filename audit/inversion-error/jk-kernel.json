@@ -1,0 +1,25 @@
+{
+  "module": "ReviewJK.Review",
+  "lean_version": "4.36.0",
+  "mathlib_revision": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "declarations": [
+    "Shellsort.two_mul_lastCost_eq_sum_taggedArc",
+    "Shellsort.JK.referenceArc_eq_binomial_sum",
+    "Shellsort.JK.bernoulli_arc_coupling",
+    "Shellsort.JK.two_mul_lastCost_error",
+    "Shellsort.JK.lastCost_error_of_arc_bound",
+    "Shellsort.JK.lastCost_uniform_error_of_integrated_arcs"
+  ],
+  "checked_declarations": 18790,
+  "export_sha256": "0dc3b9e2fe047ad804f21ca7ff9fe9c635875f7267dffaf72aff8460661ae80a",
+  "export_bytes": 82174921,
+  "checkers": [
+    "Nanoda",
+    "Lean default kernel (leanchecker --from-export)"
+  ],
+  "transitive_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ]
+}
