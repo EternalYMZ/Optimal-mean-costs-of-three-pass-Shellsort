@@ -1,0 +1,111 @@
+@Shellsort.JK.bernoulli_variance_drift_defect : ∀ {m : ℕ} (p : Fin m → ℝ) (q : ℝ),
+  (Shellsort.centeredSecond (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+      ↑(Shellsort.bitCount z)) =
+    ↑m * q * (1 - q) + (1 - 2 * q) * ∑ i, (p i - q) - ∑ i, (p i - q) ^ 2
+'Shellsort.JK.bernoulli_variance_drift_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.bernoulli_variance_budget : ∀ {m : ℕ} (p : Fin m → ℝ) (q A : ℝ),
+  q ∈ Set.Icc 0 1 →
+    |∑ i, (p i - q)| ≤ A →
+      (Shellsort.centeredSecond (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+            ↑(Shellsort.bitCount z)) +
+          ∑ i, (p i - q) ^ 2 ≤
+        ↑m * q * (1 - q) + A
+'Shellsort.JK.bernoulli_variance_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.standardDeviation_loss_of_budget : ∀ {V B A D : ℝ},
+  0 ≤ V → 0 < B → V + D ≤ B ^ 2 + A → √V ≤ B + (A - D) / (2 * B)
+'Shellsort.JK.standardDeviation_loss_of_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shellsort.JK.abs_pair_transfer_gain : ∀ (ps : List ℝ) (a b q : ℝ) (K : ℕ),
+  ((Shellsort.JK.trialExpectation (q :: (a + b - q) :: ps) fun k => |↑k - ↑K|) -
+      Shellsort.JK.trialExpectation (a :: b :: ps) fun k => |↑k - ↑K|) =
+    2 * (q - a) * (b - q) * Shellsort.JK.trialExpectation ps fun k => if k + 1 = K then 1 else 0
+'Shellsort.JK.abs_pair_transfer_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.bernoulli_convex_order : ∀ {m : ℕ} (p : Fin m → ℝ) (q : ℝ),
+  (∀ (i : Fin m), p i ∈ Set.Icc 0 1) →
+    q ∈ Set.Icc 0 1 →
+      ∑ i, p i = ↑m * q →
+        ∀ (f : ℕ → ℝ),
+          (∀ (k : ℕ), 0 ≤ f k - 2 * f (k + 1) + f (k + 2)) →
+            (Shellsort.mean (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+                f (Shellsort.bitCount z)) ≤
+              Shellsort.mean (Shellsort.bernoulliVectorWeight q m) fun z => f (Shellsort.bitCount z)
+'Shellsort.JK.bernoulli_convex_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shellsort.JK.referenceArc_dominates_at_matched_mean : ∀ (h g ell : ℕ) (p : Fin (h - 1) → ℝ),
+  (∀ (i : Fin (h - 1)), p i ∈ Set.Icc 0 1) →
+    ↑ell / ↑g ∈ Set.Icc 0 1 →
+      ∑ i, p i = ↑(h - 1) * (↑ell / ↑g) →
+        (Shellsort.mean (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+            |↑(Shellsort.bitCount z) - ↑(h * ell / g)|) ≤
+          Shellsort.JK.referenceArc h g ell
+'Shellsort.JK.referenceArc_dominates_at_matched_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shellsort.JK.count_atom_lower : ∀ (ps : List ℝ) (e : ℝ),
+  0 ≤ e →
+    (∀ x ∈ ps, x ∈ Set.Icc e (1 - e)) →
+      ∀ (k : ℕ),
+        ↑(ps.length.choose k) * e ^ ps.length ≤ Shellsort.JK.trialExpectation ps fun j => if j = k then 1 else 0
+'Shellsort.JK.count_atom_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.bernoulli_abs_heterogeneity_discount : ∀ {m : ℕ} (p : Fin m → ℝ) (q e : ℝ) (K : ℕ),
+  0 ≤ e →
+    (∀ (i : Fin m), p i ∈ Set.Icc e (1 - e)) →
+      q ∈ Set.Icc e (1 - e) →
+        ∑ i, p i = ↑m * q →
+          0 < K →
+            ↑((m - 2).choose (K - 1)) * e ^ (m - 2) * ∑ i, (p i - q) ^ 2 ≤
+              (Shellsort.mean (Shellsort.bernoulliVectorWeight q m) fun z => |↑(Shellsort.bitCount z) - ↑K|) -
+                Shellsort.mean (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+                  |↑(Shellsort.bitCount z) - ↑K|
+'Shellsort.JK.bernoulli_abs_heterogeneity_discount' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shellsort.JK.referenceArc_dominates_of_drift_budget : ∀ (h g ell : ℕ) (p : Fin (h - 1) → ℝ) (r e : ℝ),
+  0 ≤ e →
+    (∀ (i : Fin (h - 1)), p i ∈ Set.Icc e (1 - e)) →
+      r ∈ Set.Icc e (1 - e) →
+        ↑ell / ↑g ∈ Set.Icc 0 1 →
+          ∑ i, p i = ↑(h - 1) * r →
+            0 < h * ell / g →
+              ↑(h - 1) * |r - ↑ell / ↑g| ≤
+                  ↑((h - 1 - 2).choose (h * ell / g - 1)) * e ^ (h - 1 - 2) * ∑ i, (p i - r) ^ 2 →
+                (Shellsort.mean (Shellsort.productWeight fun i => Shellsort.bernoulliWeight (p i)) fun z =>
+                    |↑(Shellsort.bitCount z) - ↑(h * ell / g)|) ≤
+                  Shellsort.JK.referenceArc h g ell
+'Shellsort.JK.referenceArc_dominates_of_drift_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.owner_nonowner_count_law : ∀ {m : ℕ} {β : Fin (m + 1) → Type u_1}
+  [inst : (i : Fin (m + 1)) → Fintype (β i)] (w : (i : Fin (m + 1)) → β i → ℝ),
+  (∀ (i : Fin (m + 1)), ∑ y, w i y = 1) →
+    ∀ (o : Fin (m + 1)) (E : β o → (s : Fin m) → β (o.succAbove s) → Bool) (f : ℕ → ℝ),
+      (Shellsort.mean (Shellsort.productWeight w) fun x =>
+          f (Shellsort.bitCount fun s => E (x o) s (x (o.succAbove s)))) =
+        Shellsort.mean (w o) fun a =>
+          Shellsort.mean
+            (Shellsort.productWeight fun s =>
+              Shellsort.bernoulliWeight (Shellsort.eventMarginal (w (o.succAbove s)) (E a s)))
+            fun z => f (Shellsort.bitCount z)
+'Shellsort.JK.owner_nonowner_count_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.physicalArc_threshold_law : ∀ {n : ℕ} (m g ell : ℕ) (i : Fin n) (t : ℝ) (f : ℕ → ℝ),
+  (Shellsort.mean (Shellsort.bernoulliVectorWeight t n) fun z =>
+      f (Shellsort.taggedSubsetArcCount (m + 1) g ell i (Shellsort.fullBitsSubset i z))) =
+    Shellsort.JK.physicalArcAtThreshold m g ell i t f
+'Shellsort.JK.physicalArc_threshold_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.uniform_arc_physical_integral : ∀ {n : ℕ} (m g ell : ℕ) (i : Fin n) (f : ℕ → ℝ),
+  (Shellsort.uniformAverage fun p =>
+      f (Shellsort.taggedSubsetArcCount (m + 1) g ell i ↑(Shellsort.tagLowerState p i))) =
+    ∫ (t : ℝ) in 0..1, Shellsort.JK.physicalArcAtThreshold m g ell i t f
+'Shellsort.JK.uniform_arc_physical_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.physicalHitProbability_mem_unit : ∀ {n m : ℕ} (g ell : ℕ) (i : Fin n),
+  ∀ t ∈ Set.Icc 0 1, ∀ (y : ℕ) (s : Fin m), Shellsort.JK.physicalHitProbability g ell i t y s ∈ Set.Icc 0 1
+'Shellsort.JK.physicalHitProbability_mem_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Shellsort.JK.lastCost_le_psi_of_physical_budget : ∀ {n : ℕ} (m g : ℕ),
+  0 < g →
+    (m + 1).Coprime g →
+      (∀ (i : Fin n) (ell : ℕ),
+          0 < ell →
+            ell < g →
+              ∀ t ∈ Set.Icc 0 1,
+                let h := m + 1;
+                have c := (Shellsort.positionChainEquiv n h ⋯) i;
+                ∀ (a : Fin (Shellsort.sourceTrialLength (n / h) (n % h) ↑c.fst) → Bool),
+                  Shellsort.JK.arcMarginalBudget
+                    (fun s => Shellsort.JK.physicalHitProbability g ell i t (Shellsort.ownerBitCount c.snd a) s)
+                    (↑ell / ↑g) (h * ell / g)) →
+        (Shellsort.uniformAverage fun p =>
+            ↑(Shellsort.gapInsertionCost (Shellsort.gapSort (Shellsort.gapSort p (m + 1)) g) 1 ⋯)) ≤
+          ↑n * Shellsort.JK.psi (m + 1) g
+'Shellsort.JK.lastCost_le_psi_of_physical_budget' depends on axioms: [propext, Classical.choice, Quot.sound]

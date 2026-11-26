@@ -113,6 +113,29 @@
       "export_sha256": "0dc3b9e2fe047ad804f21ca7ff9fe9c635875f7267dffaf72aff8460661ae80a",
       "export_bytes": 82174921,
       "checker": "nanoda"
+    },
+    {
+      "module": "JKSign.Review",
+      "declarations": [
+        "Shellsort.JK.bernoulli_variance_drift_defect",
+        "Shellsort.JK.bernoulli_variance_budget",
+        "Shellsort.JK.standardDeviation_loss_of_budget",
+        "Shellsort.JK.abs_pair_transfer_gain",
+        "Shellsort.JK.bernoulli_convex_order",
+        "Shellsort.JK.referenceArc_dominates_at_matched_mean",
+        "Shellsort.JK.count_atom_lower",
+        "Shellsort.JK.bernoulli_abs_heterogeneity_discount",
+        "Shellsort.JK.referenceArc_dominates_of_drift_budget",
+        "Shellsort.JK.owner_nonowner_count_law",
+        "Shellsort.JK.physicalArc_threshold_law",
+        "Shellsort.JK.uniform_arc_physical_integral",
+        "Shellsort.JK.physicalHitProbability_mem_unit",
+        "Shellsort.JK.lastCost_le_psi_of_physical_budget"
+      ],
+      "checked_declarations": 46064,
+      "export_sha256": "c2fc5b686c975940b9f14e538e5912c0499530ff066d48c53d960885802279aa",
+      "export_bytes": 284328535,
+      "checker": "nanoda"
     }
   ]
 }

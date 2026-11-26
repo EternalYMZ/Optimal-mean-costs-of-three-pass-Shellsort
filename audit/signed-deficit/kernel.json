@@ -1,0 +1,40 @@
+{
+  "module": "JKSign.Review",
+  "lean": "Lean (version 4.36.0, x86_64-w64-windows-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "mathlib": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "base_project": "86868d7f2b2ed2271235e357698544dbff7cbea8",
+  "declarations": [
+    "Shellsort.JK.bernoulli_variance_drift_defect",
+    "Shellsort.JK.bernoulli_variance_budget",
+    "Shellsort.JK.standardDeviation_loss_of_budget",
+    "Shellsort.JK.abs_pair_transfer_gain",
+    "Shellsort.JK.bernoulli_convex_order",
+    "Shellsort.JK.referenceArc_dominates_at_matched_mean",
+    "Shellsort.JK.count_atom_lower",
+    "Shellsort.JK.bernoulli_abs_heterogeneity_discount",
+    "Shellsort.JK.referenceArc_dominates_of_drift_budget",
+    "Shellsort.JK.owner_nonowner_count_law",
+    "Shellsort.JK.physicalArc_threshold_law",
+    "Shellsort.JK.uniform_arc_physical_integral",
+    "Shellsort.JK.physicalHitProbability_mem_unit",
+    "Shellsort.JK.lastCost_le_psi_of_physical_budget"
+  ],
+  "checked_declarations": 46064,
+  "export_bytes": 284328535,
+  "export_sha256": "c2fc5b686c975940b9f14e538e5912c0499530ff066d48c53d960885802279aa",
+  "checkers": [
+    "Nanoda",
+    "Lean default kernel, empty environment"
+  ],
+  "transitive_axiom_whitelist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sources_sha256": {
+    "JKSign/Variance.lean": "d38cb77f42485dcc637234472d641a04cda7d2bbf4348fe35467f84f9e32408f",
+    "JKSign/Smoothing.lean": "8fbee50357a2dd87d074c177fa336bab8f5e865a18e1c83fac5c238fae3b4b4d",
+    "JKSign/Physical.lean": "c038776123a4c2e1a6e23a7d8c7c56da7202af2d92a585c02c7dc2ab00e0494c",
+    "JKSign/Review.lean": "bbbd4d501e1e4ac6fad48b2b0961e4081f98acfe522c0f480694be9b0d84b0fb"
+  }
+}

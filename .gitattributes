@@ -1,1 +1,3 @@
 Shellsort/F09ArcAveraging.lean text eol=lf
+JKSign/*.lean text eol=lf
+audit/divisor-two/shell_constant_integer_certificate.py text eol=lf

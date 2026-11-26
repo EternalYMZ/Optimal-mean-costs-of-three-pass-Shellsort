@@ -4,6 +4,8 @@
 
 **[English manuscript](Shellsort-P01_en/README.md)** · **[中文文稿](Shellsort-P01_cn/README.md)** · **[Sharp three-pass theorem](Shellsort/F09Verified.lean)**
 
+The signed deficit is strictly positive for every input size and every coprime second gap $g\ge2$ when the first gap is at least $2^{21}$. A discrete Fourier profile gives its leading term throughout the gap range. The deep-chain coefficient is between $0.002804727333$ and $0.002821272543$. The finite variance and physical arc-integral identities have Lean proofs. The asymptotic bounds and the effective threshold have analytical proofs. [Theorem scopes, certified arithmetic and kernel replay](audit/signed-deficit/README.md)
+
 The analytical proof of Janson and Knuth's first uniform-error conjecture now belongs to the three-pass results. Lean checks the executed final-pass identity, the reference binomial sum, the finite Bernoulli coupling and the final inequality given its integrated arc premise. On the critical scales the signed deficit attains the conjectured error order. Applying the three-pass law on two residue classes gives an explicit four-pass family with coefficient below $0.59880$. [Theorem scopes, exact examples and kernel replay](audit/inversion-error/README.md)
 
 For uniform random input, separately minimizing either counter over all three-pass tables or over noncoprime tables gives an additive remainder of $O(n^{5/4})$ about its limiting leading term. Averaging over the actual pivot widths and thresholds gives a normalized error $O_{D,d}(n^{-1/4})$ on each positive compact window at fixed divisor. The full rate has an analytical proof. [Derivation, kernel and finite checks](audit/critical-window/README.md)

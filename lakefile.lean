@@ -13,3 +13,8 @@ lean_lib Shellsort where
 lean_lib ReviewJK where
   roots := #[`ReviewJK.Review]
   globs := #[.submodules `ReviewJK]
+
+@[default_target]
+lean_lib JKSign where
+  roots := #[`JKSign.Review]
+  globs := #[.submodules `JKSign]
