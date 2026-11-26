@@ -4,7 +4,7 @@
 
 **[English manuscript](Shellsort-P01_en/README.md)** · **[中文文稿](Shellsort-P01_cn/README.md)** · **[Sharp three-pass theorem](Shellsort/F09Verified.lean)**
 
-The quantitative critical-window analysis gives an additive remainder of order $O(n^{11/8})$ for the unrestricted and noncoprime optima. It uses Goldstein's mean central limit theorem for the actual pivot counts. The rate is analytical. [Original references and execution check](audit/critical-window/README.md)
+For uniform random input, separately minimizing either counter over all three-pass tables or over noncoprime tables gives an additive remainder of $O(n^{5/4})$ about its limiting leading term. Averaging over the actual pivot widths and thresholds gives a normalized error $O_{D,d}(n^{-1/4})$ on each positive compact window at fixed divisor. The full rate has an analytical proof. [Derivation, kernel and finite checks](audit/critical-window/README.md)
 
 Under a noncoprimality constraint, every sufficiently large exact minimizer of either executed counter has divisor two. Lean separates a divisor-two trial below 0.6431 from every divisor at least three, whose limiting coefficient is at least 0.646. The [scale formula](Shellsort/F09ScalePenalty.lean) gives the exact penalty for mistuning the two gaps at fixed shape. Build both results with `lake build Shellsort`. [Divisor-two proof](Shellsort/F09DivisorTwo.lean) · [Sharper rational trial below 0.63837](audit/divisor-two/check_divisor_two.py) · [Scale-penalty kernel replay](audit/divisor-two/scale_penalty_kernel.json)
 

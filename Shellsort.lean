@@ -7,6 +7,7 @@ import Shellsort.ThreePassGapScales
 import Shellsort.F09ResidueRestriction
 import Shellsort.F09NoncoprimeCost
 import Shellsort.F09ScalePenalty
+import Shellsort.F09ArcAveraging
 import Shellsort.F09DivisorTwo
 import Shellsort.CriticalGapApproximation
 import Shellsort.TwoGapResidualScales

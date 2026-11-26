@@ -1,0 +1,37 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py F09ArcAveraging.lean Shellsort.F09.ArcAveraging.average_width_inv_sqrt Shellsort.F09.ArcAveraging.sqrt_variance_error Shellsort.F09.ArcAveraging.heat_variance_floor Shellsort.F09.ArcAveraging.window_width_floor Shellsort.F09.ArcAveraging.averaged_heat_error",
+  "export_invocation": "leanexport F09ArcAveraging -- Shellsort.F09.ArcAveraging.average_width_inv_sqrt Shellsort.F09.ArcAveraging.sqrt_variance_error Shellsort.F09.ArcAveraging.heat_variance_floor Shellsort.F09.ArcAveraging.window_width_floor Shellsort.F09.ArcAveraging.averaged_heat_error",
+  "roots": [
+    "Shellsort.F09.ArcAveraging.average_width_inv_sqrt",
+    "Shellsort.F09.ArcAveraging.sqrt_variance_error",
+    "Shellsort.F09.ArcAveraging.heat_variance_floor",
+    "Shellsort.F09.ArcAveraging.window_width_floor",
+    "Shellsort.F09.ArcAveraging.averaged_heat_error"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "b6eb5f11d96e3048a262c206e762da95e0f8866650b7858fbd2e95057baa9f32",
+  "proof_sha256": "0a5e6d66ffd5a2498a381dfcb816f259bffd5e6da9e71389fb28085d74048a34",
+  "proof_bytes": 257338287,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.F09.ArcAveraging.average_width_inv_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.ArcAveraging.sqrt_variance_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.ArcAveraging.heat_variance_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.ArcAveraging.window_width_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.ArcAveraging.averaged_heat_error' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 43711 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.F09.ArcAveraging.average_width_inv_sqrt (G : Nat) (hG : LT.lt (OfNat.ofNat 0) G) :\n  LE.le\n    (HDiv.hDiv\n      (Finset.sum (Finset.range (HSub.hSub G (OfNat.ofNat 1)))\n        (fun (i : Nat) =>\n        HDiv.hDiv (OfNat.ofNat 1) (Real.sqrt (Shellsort.F09.ArcAveraging.width G (HAdd.hAdd i (OfNat.ofNat 1))))))\n      (Nat.cast G)) (OfNat.ofNat 4) :=\n  _\n\ntheorem Shellsort.F09.ArcAveraging.sqrt_variance_error :\n  forall {a b : Real},\n  LE.le (OfNat.ofNat 0) a \u2192 LT.lt (OfNat.ofNat 0) b \u2192 LE.le (abs (HSub.hSub (Real.sqrt a) (Real.sqrt b)))\n    (HDiv.hDiv (abs (HSub.hSub a b)) (Real.sqrt b)) :=\n  _\n\ntheorem Shellsort.F09.ArcAveraging.heat_variance_floor :\n  forall {\u03b4 x : Real},\n  LE.le (OfNat.ofNat 0) \u03b4 \u2192 Membership.mem (Set.Icc (OfNat.ofNat 0) (OfNat.ofNat 1)) x \u2192 LE.le\n    (HMul.hMul\n      (HSub.hSub (OfNat.ofNat 1)\n        (Real.exp (HMul.hMul (HMul.hMul (Neg.neg (OfNat.ofNat 4)) (HPow.hPow Real.pi (OfNat.ofNat 2))) \u03b4)))\n      (HMul.hMul x (HSub.hSub (OfNat.ofNat 1) x))) (Shellsort.F09.V \u03b4 x) :=\n  _\n\ntheorem Shellsort.F09.ArcAveraging.window_width_floor :\n  forall {lam0 lam s x : Real},\n  LT.lt (OfNat.ofNat 0) lam0 \u2192 LE.le lam0 lam \u2192 Membership.mem (Set.Icc (OfNat.ofNat 0) (OfNat.ofNat 1)) s \u2192\n  Membership.mem (Set.Icc (OfNat.ofNat 0) (OfNat.ofNat 1)) x \u2192 LE.le\n    (HMul.hMul\n      (HDiv.hDiv\n        (HMul.hMul\n          (HSub.hSub (OfNat.ofNat 1)\n            (Real.exp (HMul.hMul (HMul.hMul (Neg.neg (OfNat.ofNat 4)) (HPow.hPow Real.pi (OfNat.ofNat 2))) lam0))) s)\n        (OfNat.ofNat 2)) (Min.min x (HSub.hSub (OfNat.ofNat 1) x))) (Shellsort.F09.V (HMul.hMul lam s) x) :=\n  _\n\ntheorem Shellsort.F09.ArcAveraging.averaged_heat_error (G : Nat) (hG : LT.lt (OfNat.ofNat 0) G) (A : Nat \u2192 Real) :\n  forall {lam0 lam s e : Real},\n  LT.lt (OfNat.ofNat 0) lam0 \u2192 LE.le lam0 lam \u2192 LT.lt (OfNat.ofNat 0) s \u2192 LE.le s (OfNat.ofNat 1) \u2192 LE.le\n      (OfNat.ofNat 0) e \u2192\n  (forall (j : Nat), LT.lt (OfNat.ofNat 0) j \u2192 LT.lt j G \u2192 LE.le (OfNat.ofNat 0) (A j)) \u2192 (forall (j : Nat),\n    LT.lt (OfNat.ofNat 0) j \u2192 LT.lt j G \u2192 LE.le\n      (abs (HSub.hSub (A j) (Shellsort.F09.V (HMul.hMul lam s) (HDiv.hDiv (Nat.cast j) (Nat.cast G))))) e) \u2192\n  LE.le\n    (HDiv.hDiv\n      (Finset.sum (Finset.range (HSub.hSub G (OfNat.ofNat 1)))\n        (fun (i : Nat) =>\n        abs\n          (HSub.hSub (Real.sqrt (A (HAdd.hAdd i (OfNat.ofNat 1))))\n            (Real.sqrt\n              (Shellsort.F09.V (HMul.hMul lam s) (HDiv.hDiv (Nat.cast (HAdd.hAdd i (OfNat.ofNat 1))) (Nat.cast G)))))))\n      (Nat.cast G))\n    (HMul.hMul (OfNat.ofNat 4)\n      (HDiv.hDiv e\n        (Real.sqrt\n          (HDiv.hDiv\n            (HMul.hMul\n              (HSub.hSub (OfNat.ofNat 1)\n                (Real.exp (HMul.hMul (HMul.hMul (Neg.neg (OfNat.ofNat 4)) (HPow.hPow Real.pi (OfNat.ofNat 2))) lam0)))\n              s) (OfNat.ofNat 2))))) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}
