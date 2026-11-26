@@ -4,6 +4,8 @@
 
 **[English manuscript](Shellsort-P01_en/README.md)** · **[中文文稿](Shellsort-P01_cn/README.md)** · **[Sharp three-pass theorem](Shellsort/F09Verified.lean)**
 
+Under a noncoprimality constraint, every sufficiently large exact minimizer of either executed counter has divisor two. Lean separates a divisor-two trial below 0.6431 from every divisor at least three, whose limiting coefficient is at least 0.646. The [scale formula](Shellsort/F09ScalePenalty.lean) gives the exact penalty for mistuning the two gaps at fixed shape. Build both results with `lake build Shellsort`. [Divisor-two proof](Shellsort/F09DivisorTwo.lean) · [Sharper rational trial below 0.63837](audit/divisor-two/check_divisor_two.py) · [Scale-penalty kernel replay](audit/divisor-two/scale_penalty_kernel.json)
+
 On uniform random permutations, ordinary three-pass Shellsort with the best predetermined gaps uses $(\kappa+o(1))n^{3/2}$ successful shifts or key comparisons in expectation, with each mean minimized separately. Lean proves $0.60822153\le\kappa<0.60827485406$ and characterizes every gap family attaining this coefficient.
 
 ## Main Result

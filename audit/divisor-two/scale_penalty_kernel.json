@@ -1,0 +1,34 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py /path/to/F09ScalePenalty.lean",
+  "export_invocation": "leanexport F09ScalePenalty -- Shellsort.F09.fixed_shape_scale_penalty Shellsort.F09.fixed_shape_scale_penalty_lower",
+  "roots": [
+    "Shellsort.F09.fixed_shape_scale_penalty",
+    "Shellsort.F09.fixed_shape_scale_penalty_lower"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "b69d7e82f7aab1a0139e4305e21517f910808287d1ac9337de3cf2851748775b",
+  "proof_sha256": "0d98cb1c9eff1563e7caae44b4c7db77b5945bdb4a36c97084f33b0037cef46c",
+  "proof_bytes": 174277159,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.F09.fixed_shape_scale_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.fixed_shape_scale_penalty_lower' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 33713 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.F09.fixed_shape_scale_penalty :\n  forall {d : Nat} (hd : LT.lt (OfNat.ofNat 0) d) {a b z : Real},\n  LT.lt (OfNat.ofNat 0) a \u2192 LT.lt (OfNat.ofNat 0) b \u2192 Eq (Shellsort.F09.shape d a b) z \u2192 (let s : Real :=\n    Real.sqrt (HDiv.hDiv Shellsort.F09.c (HMul.hMul (Nat.cast d) z));\n  let r : Real := HMul.hMul (HMul.hMul (OfNat.ofNat 2) a) s;\n  Eq (HSub.hSub (Shellsort.F09.K d a b) (Shellsort.F09.reduced d z))\n    (HMul.hMul (HDiv.hDiv s (OfNat.ofNat 2))\n      (HDiv.hDiv (HPow.hPow (HSub.hSub r (OfNat.ofNat 1)) (OfNat.ofNat 2)) r))) :=\n  _\n\ntheorem Shellsort.F09.fixed_shape_scale_penalty_lower :\n  forall {d : Nat} (hd : LT.lt (OfNat.ofNat 0) d) {a b z t : Real},\n  LT.lt (OfNat.ofNat 0) a \u2192 LT.lt (OfNat.ofNat 0) b \u2192 Eq (Shellsort.F09.shape d a b) z \u2192 LE.le (OfNat.ofNat 1)\n      t \u2192\n  (let s : Real := Real.sqrt (HDiv.hDiv Shellsort.F09.c (HMul.hMul (Nat.cast d) z));\n  let r : Real := HMul.hMul (HMul.hMul (OfNat.ofNat 2) a) s;\n  Or (LE.le t r) (LE.le r (HDiv.hDiv (OfNat.ofNat 1) t)) \u2192 LE.le\n    (HMul.hMul (HDiv.hDiv s (OfNat.ofNat 2)) (HDiv.hDiv (HPow.hPow (HSub.hSub t (OfNat.ofNat 1)) (OfNat.ofNat 2)) t))\n    (HSub.hSub (Shellsort.F09.K d a b) (Shellsort.F09.reduced d z))) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}

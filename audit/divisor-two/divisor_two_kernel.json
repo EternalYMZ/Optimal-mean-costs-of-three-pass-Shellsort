@@ -1,0 +1,12 @@
+{
+  "source_sha256": "a7a59659a81da046c486c6134bb0cdd593de611312405fb37acda07efd4b94ce",
+  "anonymous_archive_sha256": "2b31c74f56774e259041e48e534b1f94c3e28ae28453fb9e821378236bfc44b5",
+  "matching_archived_lean_and_configuration_files": 287,
+  "lean_command": "lake env lean -R <source directory> -o <scratch>/F09DivisorTwo.olean F09DivisorTwo.lean",
+  "lean_stdout": "Shellsort.F09.divisor_two_coarse_upper : reduced 2 1 < 6431 / 10000\nShellsort.F09.all_larger_divisors_coarse_lower (d : ℕ) (hd : 3 ≤ d) (z : ℝ) (hz : 0 < z) : 646 / 1000 ≤ reduced d z\nShellsort.F09.verified_divisor_two_dominates :\n  ∃ n₀,\n    ∀ n ≥ n₀,\n      ∃ v,\n        divisor v = 2 ∧\n          ∀ (w : LegalThreePassPair n),\n            3 ≤ divisor w →\n              threePassPairMeanShifts v < threePassPairMeanShifts w ∧\n                threePassPairMeanComparisons v < threePassPairMeanComparisons w\nShellsort.F09.verified_noncoprime_minimizers_divisor_two :\n  ∃ n₀,\n    ∀ n ≥ n₀,\n      ∀ (w : LegalThreePassPair n),\n        2 ≤ divisor w →\n          ((∀ (v : LegalThreePassPair n), 2 ≤ divisor v → threePassPairMeanShifts w ≤ threePassPairMeanShifts v) ∨\n              ∀ (v : LegalThreePassPair n),\n                2 ≤ divisor v → threePassPairMeanComparisons w ≤ threePassPairMeanComparisons v) →\n            divisor w = 2\n'Shellsort.F09.divisor_two_coarse_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.all_larger_divisors_coarse_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.verified_divisor_two_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.F09.verified_noncoprime_minimizers_divisor_two' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "kernel_command": "lake env leanchecker F09DivisorTwo",
+  "kernel_exit_code": 0,
+  "kernel_stdout": "",
+  "kernel_stderr": ""
+}
